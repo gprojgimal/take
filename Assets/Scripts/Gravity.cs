@@ -4,16 +4,21 @@ using System.Collections;
 public enum FallingType
 {
     Bomb,
-    Grape,
+    Tomato,
+    Orange,
+    Strawberry,
     Banana,
-    Apple
+    Peach,
+    Apple,
+    Apricot,
+    Cherry
 }
 
 public class Gravity : MonoBehaviour {
 
     FallingType ftType;
 
-    public Sprite spBomb, spGrape, spBanana, spApple;
+    public Sprite spBomb, spTomato, spOrange, spStraw, spBanana, spPeach, spApple, spApricot, spCherry;
 
     SpriteRenderer srRender;
 
@@ -25,7 +30,7 @@ public class Gravity : MonoBehaviour {
         }
         else
         {
-            ftType = FallingType.Apple;
+            ftType = (FallingType)Mathf.Round(Random.Range(1.0f, 8.0f));
         }
         srRender = this.GetComponent<SpriteRenderer>();
 
@@ -33,6 +38,30 @@ public class Gravity : MonoBehaviour {
         {
             case FallingType.Bomb:
                 srRender.sprite = spBomb;
+                break;
+            case FallingType.Tomato:
+                srRender.sprite = spTomato;
+                break;
+            case FallingType.Orange:
+                srRender.sprite = spOrange;
+                break;
+            case FallingType.Strawberry:
+                srRender.sprite = spStraw;
+                break;
+            case FallingType.Banana:
+                srRender.sprite = spBanana;
+                break;
+            case FallingType.Peach:
+                srRender.sprite = spPeach;
+                break;
+            case FallingType.Apple:
+                srRender.sprite = spApple;
+                break;
+            case FallingType.Apricot:
+                srRender.sprite = spApricot;
+                break;
+            case FallingType.Cherry:
+                srRender.sprite = spCherry;
                 break;
             default:
                 srRender.sprite = spApple;
@@ -42,7 +71,7 @@ public class Gravity : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.Translate(new Vector3(0, -Time.deltaTime*4f));
+        transform.Translate(new Vector3(0, -0.1f));
         if(srRender.bounds.Intersects(KeyboardExample.srRenderer.bounds))
         {
             if (ftType == FallingType.Bomb)

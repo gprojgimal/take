@@ -1,10 +1,19 @@
 fileFormatVersion: 2
 guid: f1ad9a64585a350479751652593fa0fa
-timeCreated: 1448677942
+timeCreated: 1448894592
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - spBomb: {instanceID: 0}
+  - spTomato: {instanceID: 0}
+  - spOrange: {instanceID: 0}
+  - spStraw: {instanceID: 0}
+  - spBanana: {instanceID: 0}
+  - spPeach: {instanceID: 0}
+  - spApple: {instanceID: 0}
+  - spApricot: {instanceID: 0}
+  - spCherry: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
